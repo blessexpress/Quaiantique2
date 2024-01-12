@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationsController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset("css/reservation.css") }}>
+{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <h2>Réservez une Table</h2>
+        <form action="{{ path('app_reservations') }}" method="POST">
+            <input type="text" name="nom" placeholder="Votre Nom" required>
+            <input type="email" name="email" placeholder="Votre E-mail" required>
+            <input type="tel" name="telephone" placeholder="Votre Téléphone" required>
+            <select name="nombre_personnes" required>
+                <option value="" disabled selected>Nombre de Personnes</option>
+                <option value="1">1 personne</option>
+                <option value="2">2 personnes</option>
+                <option value="3">3 personnes</option>
+                <!-- Ajoutez d'autres options selon vos besoins -->
+            </select>
+            <input type="date" name="date_reservation" required>
+            <input type="time" name="heure_reservation" required>
+            <button type="submit">Réserver</button>
+        </form>
+    </div>
+{% endblock %}

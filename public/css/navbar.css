@@ -1,0 +1,9 @@
+img.logo {
+    width: 7%;
+    height: 30%;
+    margin-left: 10%
+}
+
+.container-fluid{
+    background-color: lightblue;
+}

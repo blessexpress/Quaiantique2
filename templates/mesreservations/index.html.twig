@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}liste des reservations{% endblock %}
+
+{% block body %}
+    {% for row in reservations %}
+   Email: {{ row.Email }} <br>
+
+    {% endfor %}
+
+{% endblock %}

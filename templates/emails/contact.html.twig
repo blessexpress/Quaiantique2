@@ -1,0 +1,24 @@
+{# templates/emails/contact.html.twig #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau message du formulaire de contact</title>
+</head>
+<body>
+<p style="color: red">Bonjour,</p>
+
+<p>Vous avez reçu un nouveau message du formulaire de contact :</p>
+
+<p><strong>Nom :</strong> {{ fromName }}</p>
+<p><strong>Email :</strong> {{ fromEmail }}</p>
+
+<p><strong>Message :</strong></p>
+
+<p >{{ message }}</p>
+
+<p>Merci,</p>
+</body>
+</html>

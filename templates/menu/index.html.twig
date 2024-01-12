@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MenuController!{% endblock %}
+
+{% block body %}
+
+    <style>
+
+        header {
+            background-color: deepskyblue;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .menu-item {
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            max-width: 180px;
+            max-height: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    </style>
+<body>
+<header>
+    <h1>Nos Menus Aquatiques</h1>
+</header>
+
+<section>
+    {% for menu in menus %}
+        <div class="menu-item">
+            <img src="{{ asset('assets/img/accueil.png') }}" alt="Plat1">
+            <div>
+                <span>{{ menu.title }}</span>
+                <br>
+                <span>Prix: {{ menu.price }} €</span>
+                <br>
+                <span>{{ menu.description }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CarteRestaurantController!{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+
+        h3{
+        text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px;
+        }
+
+        .plats {
+        border: 1px solid black;
+        border-radius: 5px;
+
+        }
+
+    </style>
+
+    {# templates/carte/index.html.twig #}
+
+    <h2>Menu du Restaurant</h2>
+
+    <div class="plats">
+        <ul>
+            {% for menuItem in RestaurantCard %}
+                <li> <div style="border: 1px solid black;"> {{ menuItem.category }} </div>  {{ menuItem.title }} - {{ menuItem.price }}€</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+
+{% endblock %}

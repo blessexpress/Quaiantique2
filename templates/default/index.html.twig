@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset("css/accueil.css") }}>
+{% endblock %}
+
+{% block body %}
+
+    {% for message in app.flashes('success') %}
+        <div class="container alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('danger') %}
+        <div class="container alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+<body>
+    <div class="container-accueil">
+        <img class="imgA" src="{{ asset('assets/img/accueil.png') }}">
+        <div class="textA">
+            Le <br>
+            QUAI ANTIQUE <br>
+            Bienvenue à Quai Antique, où chaque bouchée raconte une histoire de l'océan.
+        </div>
+    </div>
+
+       <p class="introtext">SPÉCIALITÉ DE PLATS A BASE DE POISSON ÉXCLUSIVEMENT</p>
+
+
+
+    <div class="presentationcontainer">
+        <div class="plat1">
+            <img class="poulpe" src="{{ asset('assets/img/AdobeStock_628278586_Preview.jpeg') }}">
+        </div>
+        <div class="crabecontainer">
+            <img class="crabe" src="{{ asset('assets/img/AdobeStock_618497434_Preview.jpeg') }}">
+        </div>
+        <div class="homardcontainer">
+            <img class="homard" src="{{ asset('assets/img/AdobeStock_631237087_Preview.jpeg') }}">
+        </div>
+
+        <div class="textepoulpecontainer">
+            <p class="textpoulpe"> <span class="titrerestaurant">Notre Restaurant </span> <br> Plongez dans une expérience culinaire maritime chez QUAI ANTIQUE. <br>
+            Découvrez la fraîcheur de nos poissons et fruits de mer préparés <br> avec  expertise.
+            Notre menu, inspiré par les vagues de l'océan <br>, promet des saveurs délicates  et des moments inoubliables. <br>
+            Réservez votre table dès maintenant et laissez-nous vous  <br>cemmener en voyage au cœur de la mer.</p>
+        </div>
+    </div>
+
+        <title>Galerie d'Images</title>
+        <style>
+            .example {
+                margin: 20px;
+                display: flex;
+                position: relative;
+                padding: 0;
+                cursor: pointer;
+                overflow: hidden;
+                width: 400px;
+            }
+
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-content: center;
+                margin-left: 100px;
+                margin-top: 30px;
+            }
+
+            .content {
+                opacity: 0;
+                font-size: 40px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #1c87c9;
+                background-color: rgba(200, 200, 200, 0.5);
+                width: 250px;
+                height: 250px;
+                transition: all 400ms ease-out;
+                text-align: center;
+            }
+
+            .divgalleryt {
+                margin-left: 35%;
+                margin-top: 100px;
+            }
+
+            .gallerytitle {
+                font-family:Arial ;
+
+            }
+
+            .example .content:hover {
+                opacity: 1;
+            }
+
+            .imggallery {
+                width: 250px;
+                height: 200px;
+            }
+
+            .example .content .text {
+                height: 0;
+                opacity: 1;
+                color: #0c0a09 ;
+                transition-delay: 0s;
+                transition-duration: 0.4s;
+            }
+
+            .example .content:hover .text {
+                opacity: 1;
+                transform: translateY(100px);
+                -webkit-transform: translateY(100px);
+            }
+
+        </style>
+    <body>
+    <div class="divgalleryt">
+        <h2 class="gallerytitle">Quelques plats irresistibles?</h2>
+    </div>
+    <div class="gallery">
+        {% for photo in gallery %}
+        <div class="example">
+            <img class="imggallery" src="{{ asset('assets/img/gallery/' ~ photo.image) }}" alt="{{ photo.title }}">
+            <div class="content">
+                <div class="text">{{ photo.title }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <iframe class="carteraftel" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5786.169959232193!2d5.412160469775392!3d43.5214206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98d6568505b33%3A0xdd296e185f9b7397!2sRAFTEL!5e0!3m2!1sfr!2sfr!4v1679843988950!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+</body>
+    <!-- Footer -->
+    <footer>
+        <!-- Copyright -->
+        <div class=>© 2023 Copyright:
+            <a href="/"> QUAI-ANTIQUE.com</a>
+
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+{% endblock %}
+
+
+
+
